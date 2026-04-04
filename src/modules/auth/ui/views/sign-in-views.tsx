@@ -4,11 +4,13 @@ import Link  from "next/link";
 import { z } from "zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { OctagonAlertIcon } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 
 import { Input } from "@/components/ui/input";
+import { createAuthClient } from "better-auth/client"
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,6 +31,7 @@ const formSchema = z.object({
 
 export const SignInView = () => {
     const router = useRouter();
+    const authClient =  createAuthClient()
     const [pending, setPending] = useState(false);
     const [error, setError] = useState<string | null>(null);
     
@@ -139,19 +142,29 @@ export const SignInView = () => {
                                     <div className="grid grid-cols-2 gap-4">
                                         <Button
                                             disabled={pending}
+                                            onClick={() => {
+                                                authClient.signIn.social({
+                                                    provider: "google",
+                                                })
+                                            }}
                                             variant="outline"
                                             type="button"
                                             className="w-full"
                                         >
-                                            Google
+                                            <FaGoogle />
                                         </Button>
                                         <Button
                                             disabled={pending}
+                                            onClick={() => {
+                                                authClient.signIn.social({
+                                                    provider: "github",
+                                                })
+                                            }}
                                             variant="outline"
                                             type="button"
                                             className="w-full"
                                         >
-                                            Github
+                                            <FaGithub />
                                         </Button>
                                     </div>
                                     <div className="text-center text-sm">
