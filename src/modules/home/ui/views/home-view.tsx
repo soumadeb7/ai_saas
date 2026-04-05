@@ -1,9 +1,11 @@
 "use client"
 
 import { Button } from "@base-ui/react"
+import { useRouter } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 
-export const page = () => {
+export const HomeView = () => {
+    const router = useRouter();
     const { data: session } = authClient.useSession();
 
     if (!session) {
