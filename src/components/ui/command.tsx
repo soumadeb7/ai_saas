@@ -59,7 +59,9 @@ function CommandDialog({
         )}
         showCloseButton={showCloseButton}
       >
-        {children}
+        <Command className="[&_[cmdk-list-sizer]]:min-h-[120px]">
+          {children}
+        </Command>
       </DialogContent>
     </Dialog>
   )
