@@ -5,7 +5,10 @@ import { authClient } from "@/lib/auth-client";
 import { GeneratedAvatar } from "@/components/ui/generated-avatar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD
 import { Button } from "@/components/ui/button";
+=======
+>>>>>>> 66311458ede0594883affc8b3beb6cd6092ada9b
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState } from "react";
 
@@ -30,7 +33,11 @@ import {
   DrawerTitle,
   DrawerDescription,
 } from "@/components/ui/drawer";
+<<<<<<< HEAD
 
+=======
+import { Button } from "@/components/ui/button";
+>>>>>>> 66311458ede0594883affc8b3beb6cd6092ada9b
 
 
 
