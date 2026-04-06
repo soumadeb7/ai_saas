@@ -5,10 +5,7 @@ import { authClient } from "@/lib/auth-client";
 import { GeneratedAvatar } from "@/components/ui/generated-avatar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation";
-<<<<<<< HEAD
 import { Button } from "@/components/ui/button";
-=======
->>>>>>> 66311458ede0594883affc8b3beb6cd6092ada9b
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState } from "react";
 
@@ -19,25 +16,20 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/components/ui/\dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 import {
-  Drawer,
-  DrawerPortal,
-  DrawerOverlay,
-  DrawerTrigger,
-  DrawerClose,
-  DrawerContent,
-  DrawerHeader,
-  DrawerFooter,
-  DrawerTitle,
-  DrawerDescription,
+    Drawer,
+    DrawerPortal,
+    DrawerOverlay,
+    DrawerTrigger,
+    DrawerClose,
+    DrawerContent,
+    DrawerHeader,
+    DrawerFooter,
+    DrawerTitle,
+    DrawerDescription,
 } from "@/components/ui/drawer";
-<<<<<<< HEAD
-
-=======
-import { Button } from "@/components/ui/button";
->>>>>>> 66311458ede0594883affc8b3beb6cd6092ada9b
 
 
 
@@ -61,8 +53,8 @@ export const DashboardUserButton = () => {
         return null;
     }
 
-    if (isMobile){
-        return(
+    if (isMobile) {
+        return (
             <Drawer>
                 <DrawerTrigger className="rounded-lg border border-border/10 p-3 w-full flex
                 items-center justify-between bg-white/5 hover:bg-white/10 overflow-hidden gap-x-2">
@@ -100,7 +92,7 @@ export const DashboardUserButton = () => {
                     <DrawerFooter>
                         <Button
                             variant="outline"
-                            onClick={() => {}}
+                            onClick={() => { }}
                         >
                             <CreditCardIcon className="size-4 text-black" />
                             Billing
