@@ -2,7 +2,7 @@
 
 import { ChevronDownIcon, CreditCardIcon, LogOutIcon } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
-import { GeneratedAvatar } from "@/components/ui/generated-avatar";
+import { GeneratedAvatar } from "@/components/generated-avatar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
