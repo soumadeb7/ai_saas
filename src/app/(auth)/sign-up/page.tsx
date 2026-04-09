@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 
 import { auth } from "@/lib/auth";
 
-import { SignUpView } from "@/modules/auth/ui/views/sign-in-views";
+import { SignUpView } from "@/modules/auth/ui/views/sign-up-views";
 
 const page = async () => {
     const session = await auth.api.getSession({
