@@ -1,13 +1,10 @@
-import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { auth } from "@/lib/auth";
+import { getSessionOrNull } from "@/lib/session";
 import { HomeView } from "@/modules/home/ui/views/home-view"
 
 const page = async () => {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
+  const session = await getSessionOrNull();
 
   if (!session) {
     redirect("/sign-in")
