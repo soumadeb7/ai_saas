@@ -10,15 +10,12 @@ import {
     AgentsViewError,
     AgentsViewLoading
 } from "@/modules/agents/ui/views/agent-view"
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { redirect } from "next/dist/server/api-utils";
+import { getSessionOrNull } from "@/lib/session";
+import { redirect } from "next/navigation";
 
 
 const page = async () => {
-    const session = await auth.api.getSession({
-        headers: await headers(),
-    });
+    const session = await getSessionOrNull();
 
     if (!session) {
         redirect("/sign-in")
