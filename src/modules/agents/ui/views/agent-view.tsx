@@ -9,10 +9,12 @@ import { DataTable } from "../components/data-table";
 import { columns } from "../components/columns";
 import { DataPagination } from "../components/data-pegination";
 import { useAgentsFilters } from "../../hooks/use_agents-filter";
+import { useRouter } from "next/navigation";
 
 
 
 export const AgentsView = () => {
+    const router = useRouter();
     const [filters, setFilters] = useAgentsFilters();
 
     const trpc = useTRPC();
@@ -30,7 +32,7 @@ export const AgentsView = () => {
                 />
             ) : (
                 <>
-                    <DataTable data={items} columns={columns} />
+                    <DataTable data={items} columns={columns} onRowClick={(row) => router.push(`/agents/${row.id}`)} />
                     <DataPagination
                         page={filters.page}
                         totalPages={data?.totalPages ?? 1}
